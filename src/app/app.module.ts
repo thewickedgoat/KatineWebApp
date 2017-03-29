@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TodaysMenuComponent } from './menu/todays-menu/todays-menu.component';
-import { MenuComponent } from './menu/menu.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { CreateMenuComponent } from './menu/create-menu/create-menu.component';
 import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
@@ -14,7 +13,6 @@ import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
   declarations: [
     AppComponent,
     TodaysMenuComponent,
-    MenuComponent,
     MenuItemComponent,
     CreateMenuComponent,
     EditMenuComponent
