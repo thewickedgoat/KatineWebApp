@@ -13,6 +13,7 @@ import { TodaysMenuComponent } from './menu/todays-menu/todays-menu.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { CreateMenuComponent } from './menu/create-menu/create-menu.component';
 import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
     TodaysMenuComponent,
     MenuItemComponent,
     CreateMenuComponent,
-    EditMenuComponent
+    EditMenuComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
