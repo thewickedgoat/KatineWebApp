@@ -16,6 +16,8 @@ import { CreateMenuComponent } from './menu/create-menu/create-menu.component';
 import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LoginViewsComponent } from './auth/login/login-views.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBbmu27G8I-DqbGNlJQBEWJPmL9IcoYr6M',
@@ -39,7 +41,9 @@ export const fireBaseLoginConfig = {
     CreateMenuComponent,
     EditMenuComponent,
     ToolbarComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    LoginViewsComponent
   ],
   imports: [
     BrowserModule,
