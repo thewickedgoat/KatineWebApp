@@ -1,8 +1,31 @@
 import { Injectable } from '@angular/core';
+import {AngularFire, FirebaseAuthState} from 'angularfire2';
+import {Observable} from 'rxjs';
+
 
 @Injectable()
 export class AuthService {
+  constructor(private af: AngularFire) {
+  }
 
-  constructor() { }
+  login(email, password): Observable<FirebaseAuthState> {
+    let promise = <Promise<FirebaseAuthState>> this.af.auth.login({
+      email: email,
+      password: password
+    });
+    return Observable.fromPromise(promise);
+  }
 
+  currentUSer(): Observable<FirebaseAuthState> {
+    return this.af.auth;
+  }
+
+  isAuthenticated(): Observable<boolean> {
+    return this.af.auth.take(1).map((authState: FirebaseAuthState) => !!authState);
+  }
+
+  logOut(): Observable<void> {
+    let promise = this.af.auth.logout();
+    return Observable.fromPromise(promise);
+  }
 }

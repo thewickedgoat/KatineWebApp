@@ -18,6 +18,14 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LoginViewsComponent } from './auth/login/login-views.component';
+import {Routes} from '@angular/router';
+import {AuthGuard} from './auth/login/auth-guard';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent},
+  { path: 'menu', component: MenuItemComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent},
+];
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBbmu27G8I-DqbGNlJQBEWJPmL9IcoYr6M',
