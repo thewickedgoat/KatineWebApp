@@ -1,1 +1,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.backgroundImage{
+  background-image: url("https://4.bp.blogspot.com/-XDJknuV-dQY/T_5z_o4rWmI/AAAAAAAAIkw/x6LfheBWeEE/s1600/6-backgrounds-wallpapers-desktop-.bmp");
+height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -100;
+}

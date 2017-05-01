@@ -1,26 +1,25 @@
 import {Injectable, OnInit} from '@angular/core';
-import {Menu} from "./menu";
-import {dish} from "./dish";
+import {Menu} from './menu';
+import {Dish} from './dish';
 
 @Injectable()
 export class MenuService implements OnInit {
 
   menu: Menu[];
-  dish: dish[];
+  dish: Dish[];
 
   constructor() {
-    this.dish=[{
+    this.dish = [{
       id: 1,
       name: 'dish1',
       image: 'image1'
-
     },
       {
         id: 2,
         name: 'dish2',
         image: 'image2'
       }];
-    this.menu =[{
+    this.menu = [{
       id: 1,
       date: Date.now(),
       dishes: this.dish
@@ -35,7 +34,7 @@ export class MenuService implements OnInit {
 
   }
 
-  getMenu() : Menu[] {
+  getMenu(): Menu[] {
   return this.menu;
   }
 }

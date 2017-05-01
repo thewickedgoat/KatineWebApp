@@ -5,46 +5,33 @@ import { HttpModule } from '@angular/http';
 import {MaterialModule} from '@angular/material';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {AngularFireModule, AuthMethods, AuthProviders} from 'angularfire2';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DpDatePickerModule} from 'ng2-date-picker';
+import {Routes, RouterModule} from '@angular/router';
 
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { TodaysMenuComponent } from './menu/todays-menu/todays-menu.component';
-import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { CreateMenuComponent } from './menu/create-menu/create-menu.component';
 import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
-import {Routes} from '@angular/router';
-import {MenuService} from "./menu/menu.service";
+import {MenuService} from './menu/menu.service';
 import { MenuListComponent } from './menu/menu-list/menu-list.component';
 
-const routes: Routes = [
+const appRoutes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'menu', component: MenuItemComponent}
+  { path: 'create-menu', component: CreateMenuComponent},
+  { path: 'todays-menu', component: TodaysMenuComponent},
+  { path: 'edit-menu', component: EditMenuComponent}
 ];
 
-export const firebaseConfig = {
-  apiKey: 'AIzaSyBbmu27G8I-DqbGNlJQBEWJPmL9IcoYr6M',
-  authDomain: 'firstangularproject-deef3.firebaseapp.com',
-  databaseURL: 'https://firstangularproject-deef3.firebaseio.com',
-  projectId: 'firstangularproject-deef3',
-  storageBucket: 'firstangularproject-deef3.appspot.com',
-  messagingSenderId: '643731449610'
-};
-
-export const fireBaseLoginConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-};
 
 @NgModule({
   declarations: [
     AppComponent,
     TodaysMenuComponent,
-    MenuItemComponent,
     CreateMenuComponent,
     EditMenuComponent,
     ToolbarComponent,
@@ -58,8 +45,9 @@ export const fireBaseLoginConfig = {
     MaterialModule,
     Angular2FontAwesomeModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(firebaseConfig, fireBaseLoginConfig),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    DpDatePickerModule
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]

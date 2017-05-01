@@ -1,9 +1,13 @@
+<app-toolbar></app-toolbar>
 <div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
-  <form>
+  <form (submit)="submitMenu()">
     <md-card>
       <md-card-content>
         <md-input-container FxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
-          <input mdInput placeholder="Rettens navn" name="name" [(ngModel)]=""
+          <input mdInput placeholder="Vælg en dato" name="date" [(ngModel)]="menu.date" theme="dp-material" [dpDayPicker]="config"/>
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Rettens navn" name="name" [(ngModel)]="dish.name">
         </md-input-container>
       </md-card-content>
     </md-card>
