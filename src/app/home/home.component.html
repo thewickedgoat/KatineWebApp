@@ -1,6 +1,15 @@
 <app-toolbar></app-toolbar>
-<h1>{{ost}}</h1>
+<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
+  <md-card *ngFor="let menu of menus" fxFlexLayout [fxLayout]="column">
+    <md-card-content>
+    <h3>{{menu.date  | date}}</h3>
+    <md-card *ngFor="let dish of menu.dishes">
+      <md-card-content>
+        <h1>{{dish.name}}</h1>
+        <h1>{{dish.image}}</h1>
+      </md-card-content>
+    </md-card>
+    </md-card-content>
+  </md-card>
 
-<h3>{{title}}</h3>
-<p>{{description}}</p>
-<button>mere info</button>
+</div>
