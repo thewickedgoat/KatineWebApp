@@ -6,6 +6,7 @@ import {MaterialModule} from '@angular/material';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {AngularFireModule, AuthMethods, AuthProviders} from 'angularfire2';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import 'hammerjs';
 
@@ -16,15 +17,13 @@ import { CreateMenuComponent } from './menu/create-menu/create-menu.component';
 import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './auth/login/login.component';
-import { LoginViewsComponent } from './auth/login/login-views.component';
 import {Routes} from '@angular/router';
-import {AuthGuard} from './auth/login/auth-guard';
+import {MenuService} from "./menu/menu.service";
+import { MenuListComponent } from './menu/menu-list/menu-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'menu', component: MenuItemComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent},
+  { path: 'menu', component: MenuItemComponent}
 ];
 
 export const firebaseConfig = {
@@ -50,8 +49,7 @@ export const fireBaseLoginConfig = {
     EditMenuComponent,
     ToolbarComponent,
     HomeComponent,
-    LoginComponent,
-    LoginViewsComponent
+    MenuListComponent
   ],
   imports: [
     BrowserModule,
@@ -60,9 +58,10 @@ export const fireBaseLoginConfig = {
     MaterialModule,
     Angular2FontAwesomeModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(firebaseConfig, fireBaseLoginConfig)
+    AngularFireModule.initializeApp(firebaseConfig, fireBaseLoginConfig),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

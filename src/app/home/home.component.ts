@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  ost= "hej";
+  title:string;
+  description:string;
+
   constructor() { }
 
   ngOnInit() {

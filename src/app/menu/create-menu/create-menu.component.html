@@ -1,3 +1,12 @@
-<p>
-  create-menu works!
-</p>
+<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
+  <form>
+    <md-card>
+      <md-card-content>
+        <md-input-container FxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+          <input mdInput placeholder="Rettens navn" name="name" [(ngModel)]=""
+        </md-input-container>
+      </md-card-content>
+    </md-card>
+  </form>
+
+</div>

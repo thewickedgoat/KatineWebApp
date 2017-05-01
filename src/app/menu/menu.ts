@@ -1,5 +1,7 @@
+import {dish} from './dish';
+
 export class Menu {
-  name: string;
-  date: Date;
-  description: string;
+  id: number;
+  date: number;
+  dishes: dish[];
 }
