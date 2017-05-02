@@ -13,6 +13,7 @@
   left: 15px;
   right: 15px;
 }
+
 .todays-menu-container[_ngcontent-c1] {
   background-color: rgba(88, 65, 43, 0.57);
 }
@@ -20,4 +21,15 @@
 .todays-menu-container img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.todays-menu-container h1 {
+  font-weight: bold;
+  text-shadow: 4px 4px 4px #000000;
+  color: #ededed;
+}
+
+.todays-menu-container h2 {
+  text-shadow: 4px 4px 4px #000000;
+  color: #ededed;
 }

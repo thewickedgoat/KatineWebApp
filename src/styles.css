@@ -15,5 +15,8 @@
 .carousel-control {
   display: none;
 }
+body {
+  font-family: PT Sans Narrow, sans-serif!important;
+}
 
 
