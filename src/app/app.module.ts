@@ -19,6 +19,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import {MenuService} from './menu/menu.service';
 import { MenuListComponent } from './menu/menu-list/menu-list.component';
+import { DishViewComponent } from './menu/Shared-components/dish-view/dish-view.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     EditMenuComponent,
     ToolbarComponent,
     HomeComponent,
-    MenuListComponent
+    MenuListComponent,
+    DishViewComponent
   ],
   imports: [
     BrowserModule,

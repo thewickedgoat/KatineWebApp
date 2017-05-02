@@ -1,16 +1,17 @@
 <app-toolbar></app-toolbar>
-<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
+<div FxFlexFill>
   <form (submit)="submitMenu()">
     <md-card>
-      <md-card-content>
-        <md-input-container FxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+      <img md-card-image src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/d/df/Dannebrog_3.jpg">
+        <md-input-container>
           <input mdInput placeholder="Vælg en dato" name="date" [(ngModel)]="menu.date" theme="dp-material" [dpDayPicker]="config"/>
         </md-input-container>
         <md-input-container>
           <input mdInput placeholder="Rettens navn" name="name" [(ngModel)]="dish.name">
         </md-input-container>
-      </md-card-content>
+        <md-card-actions>
+        <button md-button>Vælg foto</button>
+        </md-card-actions>
     </md-card>
   </form>
-
 </div>
