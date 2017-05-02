@@ -22,7 +22,8 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'create-menu', component: CreateMenuComponent},
   { path: 'todays-menu', component: TodaysMenuComponent},
-  { path: 'edit-menu', component: EditMenuComponent}
+  { path: 'edit-menu', component: EditMenuComponent},
+  { path: 'menu-list', component: MenuListComponent}
 ];
 
 
