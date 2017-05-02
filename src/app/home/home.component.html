@@ -1,16 +1,5 @@
 <app-toolbar></app-toolbar>
 <alert type="success">hello</alert>
 <div>
-  <md-card *ngFor="let menu of menus">
-    <md-card-content>
-    <h3>{{menu.date  | date}}</h3>
-    <md-card *ngFor="let dish of menu.dishes">
-      <md-card-content>
-        <h1>{{dish.name}}</h1>
-        <h1>{{dish.image}}</h1>
-      </md-card-content>
-    </md-card>
-    </md-card-content>
-  </md-card>
 
 </div>
