@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {Routes, RouterModule} from '@angular/router';
-import { AlertModule } from 'ngx-bootstrap';
+import {AlertModule, CarouselModule} from 'ngx-bootstrap';
 
 import 'hammerjs';
 
@@ -44,7 +44,8 @@ const appRoutes: Routes = [
     HttpModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]

@@ -1,9 +1,19 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-.backgroundImage{
-  background-image: url("https://4.bp.blogspot.com/-XDJknuV-dQY/T_5z_o4rWmI/AAAAAAAAIkw/x6LfheBWeEE/s1600/6-backgrounds-wallpapers-desktop-.bmp");
-height: 100%;
+.backgroundImage {
+  background-image: url("http://www.publicdomainpictures.net/pictures/210000/velka/wooden-background-1490898523Icg.jpg");
+  height: 100%;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.9;
   position: absolute;
   z-index: -100;
 }
+
+.carousel, .item, .active, .carousel-inner {
+  height: 100%;
+  background-color: transparent;
+}
+
+.carousel-control {
+  display: none;
+}
+
+
