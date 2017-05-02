@@ -1,6 +1,7 @@
 <app-toolbar></app-toolbar>
-<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
-  <md-card *ngFor="let menu of menus" fxFlexLayout [fxLayout]="column">
+<alert type="success">hello</alert>
+<div>
+  <md-card *ngFor="let menu of menus">
     <md-card-content>
     <h3>{{menu.date  | date}}</h3>
     <md-card *ngFor="let dish of menu.dishes">
