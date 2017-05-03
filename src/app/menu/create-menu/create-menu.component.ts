@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Menu} from '../menu';
 import {Dish} from '../dish';
 
@@ -19,6 +19,10 @@ export class CreateMenuComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  AddDishLine() {
+    console.log("function called");
   }
 
 }

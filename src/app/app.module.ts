@@ -1,29 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {Routes, RouterModule} from '@angular/router';
 import {AlertModule, CarouselModule} from 'ngx-bootstrap';
+import {DatepickerModule} from 'ngx-bootstrap/datepicker';
 
 import 'hammerjs';
 
-import { AppComponent } from './app.component';
-import { TodaysMenuComponent } from './menu/todays-menu/todays-menu.component';
-import { CreateMenuComponent } from './menu/create-menu/create-menu.component';
-import { EditMenuComponent } from './menu/edit-menu/edit-menu.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { HomeComponent } from './home/home.component';
+import {AppComponent} from './app.component';
+import {TodaysMenuComponent} from './menu/todays-menu/todays-menu.component';
+import {CreateMenuComponent} from './menu/create-menu/create-menu.component';
+import {EditMenuComponent} from './menu/edit-menu/edit-menu.component';
+import {ToolbarComponent} from './toolbar/toolbar.component';
+import {HomeComponent} from './home/home.component';
 import {MenuService} from './menu/menu.service';
-import { MenuListComponent } from './menu/menu-list/menu-list.component';
-import { DishViewComponent } from './menu/Shared-components/dish-view/dish-view.component';
+import {MenuListComponent} from './menu/menu-list/menu-list.component';
+import {DishViewComponent} from './menu/Shared-components/dish-view/dish-view.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'create-menu', component: CreateMenuComponent},
-  { path: 'todays-menu', component: TodaysMenuComponent},
-  { path: 'edit-menu', component: EditMenuComponent},
-  { path: 'menu-list', component: MenuListComponent}
+  {path: '', component: HomeComponent},
+  {path: 'create-menu', component: CreateMenuComponent},
+  {path: 'todays-menu', component: TodaysMenuComponent},
+  {path: 'edit-menu', component: EditMenuComponent},
+  {path: 'menu-list', component: MenuListComponent}
 ];
 
 
@@ -45,9 +46,11 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     AlertModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    DatepickerModule.forRoot()
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

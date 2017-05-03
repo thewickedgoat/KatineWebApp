@@ -1,20 +1,22 @@
-.containern{
-  height: 40vh;
-  margin-top: 15vh;
+.menu-container {
   background-color: rgba(88, 65, 43, 0.57);
 }
-.inputern{
-  margin-bottom: 5px;
-  margin-top: 2vh;
-}
-.rowern{
-  padding: 5vh;
-}
-.imgern {
-  max-width: 80%;
-  float:right;
+
+.inputern {
+  margin-bottom: 10px;
 }
 
-.btn-div{
-  padding: 7.5vh;
+.input-row {
+  padding: 10px;
+}
+
+.dish-img {
+  max-width: 55%;
+  float: right;
+}
+
+.btn-group {
+  background-color: #222;
+  border: none;
+  color: #ededed;
 }

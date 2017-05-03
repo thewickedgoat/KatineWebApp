@@ -1,34 +1,33 @@
 <app-toolbar></app-toolbar>
-
-<div class="containern col-md-6 col-md-offset-3">
+<div class="menu-container col-md-6 col-md-offset-3" style="margin-top: 115px;">
   <div class="row">
-    <div class="rowern row">
-      <div class="col-md-7">
-        <form class="form-group">
+    <form class="form-group">
+      <datepicker style="display: inline-block;"></datepicker>
+      <div class="input-row row">
+        <div class="col-md-7">
           <input placeholder="Rettens navn" type="text" class="inputern form-control">
-          <button type="button" class="btn btn-primary">Vælg billede</button>
-        </form>
+          <button type="button" class="btn-group btn btn-primary">Vælg billede</button>
+        </div>
+        <div class="col-md-5">
+          <img class="dish-img img-thumbnail"
+               src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
+        </div>
       </div>
-      <div class="col-md-5">
-        <img class="imgern img-thumbnail"
-             src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
-      </div>
-    </div>
-    <div class="rowern row">
-      <div class="col-md-7">
-        <form class="form-group">
+      <div class="input-row row">
+        <div class="col-md-7">
           <input placeholder="Rettens navn" type="text" class="inputern form-control">
-          <button type="button" class="btn btn-primary">Vælg billede</button>
-        </form>
+          <button type="button" class="btn-group btn btn-primary">Vælg billede</button>
+        </div>
+        <div class="col-md-5">
+          <img class="dish-img img-thumbnail"
+               src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
+        </div>
       </div>
-      <div class="col-md-5">
-        <img class="imgern img-thumbnail"
-             src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
+      <div class="input-row col-md-12">
+        <button (click)="AddDishLine()" class="btn-group btn btn-default">+</button>
+        <button class="btn-group btn btn-default" type="submit">Gem Menu</button>
       </div>
-    </div>
-    <div class="btn-div row col-md-12">
-      <button class="btn btn-default">+</button>
-      <button class="btn btn-default">Gem Menu</button>
-    </div>
+    </form>
   </div>
 </div>
+
