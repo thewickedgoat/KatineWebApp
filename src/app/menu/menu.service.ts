@@ -1,16 +1,21 @@
 import {Injectable, OnInit} from '@angular/core';
 import {Menu} from './menu';
 import {Dish} from './dish';
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MenuService implements OnInit {
+
+  APIurl = 'http://cantine-restapi-webapp.azurewebsites.net/api/menu';
 
   menu: Menu[];
   dish: Dish[];
 
 
-  constructor() {
-    this.dish = [{
+  constructor(private http: Http) {
+    /*this.dish = [{
       id: 1,
       name: 'Råkost salat',
       image: 'http://res.cloudinary.com/bjoernebanden/image/upload/v1493487117/ra_CC_8Akost-med-spidska_CC_8Al-og-guler_C3_B8dder_lyyrhu.jpg'
@@ -34,7 +39,7 @@ export class MenuService implements OnInit {
       id: 2,
       date: Date.now(),
       dishes: this.dish
-    }];
+    }];*/
   }
 
   ngOnInit(): void {
@@ -42,6 +47,18 @@ export class MenuService implements OnInit {
   }
 
   getMenu(): Menu[] {
+     this.http.get(this.APIurl)
+      .map(response => response.json() as Menu[])
+      .subscribe(menus => {
+        this.menu = menus;
+        console.log('menu: ' + menus.length);
+      });
     return this.menu;
   }
+
+  createMenu(menu: Menu){
+    this.http.post(this.APIurl, menu);
+  }
 }
+
+
