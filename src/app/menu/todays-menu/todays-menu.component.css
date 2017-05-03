@@ -32,3 +32,12 @@
   text-shadow: 4px 4px 4px #000000;
   color: #ededed;
 }
+
+.btn-back {
+  border-radius: 30px;
+  float: left;
+  margin: 8px;
+  background-color: #222;
+  border: none;
+  color: #ededed;
+}
