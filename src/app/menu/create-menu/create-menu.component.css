@@ -10,11 +10,9 @@
 .rowern{
   padding: 5vh;
 }
-
-.imgern{
-  position: absolute;
-  margin-top: 2vh;
-  margin-left: 10vh;
+.imgern {
+  max-width: 80%;
+  float:right;
 }
 
 .btn-div{
