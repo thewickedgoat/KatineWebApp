@@ -1,15 +1,21 @@
 import {Injectable, OnInit} from '@angular/core';
 import {Menu} from './menu';
 import {Dish} from './dish';
+import {Http} from "@angular/http";
+import { Observable } from 'rxjs/Observable'
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MenuService implements OnInit {
+
+  APIurl = 'http://cantine-restapi-webapp.azurewebsites.net/api/';
 
   menu: Menu[];
   dish: Dish[];
 
 
-  constructor() {
+  constructor(private http: Http) {
     this.dish = [{
       id: 1,
       name: 'Råkost salat',
@@ -41,7 +47,18 @@ export class MenuService implements OnInit {
 
   }
 
-  getMenu(): Menu[] {
-    return this.menu;
+  getMenu(): Observable<Menu[]>{
+    this.http.get(this.APIurl + 'menu')
+      .map(response => response.json() as Menu[])
+      .subscribe(menus => {
+        this.menu = menus;
+      });
   }
+
+  createMenu(menu: Menu){
+    this.http.post('http://cantine-restapi-webapp.azurewebsites.net/api/Menu', menu);
+  }
+
+
+
 }
