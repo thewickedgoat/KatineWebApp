@@ -1,5 +1,11 @@
 .menu-history-container {
   background-color: rgba(88, 65, 43, 0.57);
+  margin-top: 15px;
+}
+
+.wrapper {
+  position: relative;
+  top: 100px;
 }
 
 .todays-menu-container, h1, h2, h3, h4, h5, h6 {
@@ -14,6 +20,7 @@
   float: right;
   margin-bottom: 10px;
 }
-.menu-btn, button:first-child{
+
+.menu-btn, button:first-child {
   margin-right: 10px;
 }

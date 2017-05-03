@@ -4,15 +4,17 @@
 
 .inputern {
   margin-bottom: 10px;
+  display: inline;
 }
 
 .input-row {
   padding: 10px;
+  line-height: 97px;
 }
 
 .dish-img {
-  max-width: 55%;
   float: right;
+  max-height: 97px;
 }
 
 .btn-group {

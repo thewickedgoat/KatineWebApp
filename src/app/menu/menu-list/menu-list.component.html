@@ -1,16 +1,17 @@
 <app-toolbar></app-toolbar>
-
-<div *ngFor="let menu of menus" class=" col-md-8 col-md-offset-2 menu-history-container" style="margin-top: 115px;">
-  <h1 style="text-align: center">{{menu.date | date}}</h1>
-  <hr/>
-  <div *ngFor="let dish of menu.dishes" class="row">
-    <div class="col-md-6">
-      <img class="img-thumbnail" src="{{dish.image}}" style="max-width: 30%;"/>
+<div class="wrapper">
+  <div *ngFor="let menu of menus" class=" col-md-6 col-md-offset-3 menu-history-container">
+    <h1 style="text-align: center">{{menu.date | date}}</h1>
+    <hr/>
+    <div *ngFor="let dish of menu.dishes" class="row">
+      <div class="col-md-3">
+        <img class="img-thumbnail" src="{{dish.image}}"/>
+      </div>
+      <div class="col-md-9">
+        <h3>{{dish.name}}</h3>
+      </div>
     </div>
-    <div class="col-md-6">
-      <h3>{{dish.name}}</h3>
-    </div>
+    <button class="menu-btn btn btn-default">Slet</button>
+    <button class="menu-btn btn btn-default">Rediger</button>
   </div>
-  <button class="menu-btn btn btn-default">Slet</button>
-  <button class="menu-btn btn btn-default">Rediger</button>
 </div>
