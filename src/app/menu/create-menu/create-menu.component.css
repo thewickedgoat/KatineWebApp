@@ -1,0 +1,22 @@
+.containern{
+  height: 40vh;
+  margin-top: 15vh;
+  background-color: rgba(88, 65, 43, 0.57);
+}
+.inputern{
+  margin-bottom: 5px;
+  margin-top: 2vh;
+}
+.rowern{
+  padding: 5vh;
+}
+
+.imgern{
+  position: absolute;
+  margin-top: 2vh;
+  margin-left: 10vh;
+}
+
+.btn-div{
+  padding: 7.5vh;
+}
