@@ -1,0 +1,19 @@
+.menu-history-container {
+  background-color: rgba(88, 65, 43, 0.57);
+}
+
+.todays-menu-container, h1, h2, h3, h4, h5, h6 {
+  color: #ededed;
+  text-shadow: 4px 4px 4px #000000;
+}
+
+.menu-btn {
+  background-color: #222;
+  border: none;
+  color: #ededed;
+  float: right;
+  margin-bottom: 10px;
+}
+.menu-btn, button:first-child{
+  margin-right: 10px;
+}

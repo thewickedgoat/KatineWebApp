@@ -1,8 +1,14 @@
 <app-toolbar></app-toolbar>
-<div *ngFor="let menu of menus">
-
-<h1>{{menu.date}}</h1>
-  <div *ngFor="let dishes of menu.dishes">
-
+<div *ngFor="let menu of menus" class=" col-md-8 col-md-offset-2 menu-history-container" style="margin-top: 115px;">
+  <h1>{{menu.date | date}}</h1>
+  <div *ngFor="let dish of menu.dishes" class="row">
+    <div class="col-md-6">
+      <img class="img-thumbnail" src="{{dish.image}}" style="max-width: 30%;"/>
+    </div>
+    <div class="col-md-6">
+      <h3>{{dish.name}}</h3>
+    </div>
   </div>
+  <button class="menu-btn btn btn-default">Slet</button>
+  <button class="menu-btn btn btn-default">Rediger</button>
 </div>
