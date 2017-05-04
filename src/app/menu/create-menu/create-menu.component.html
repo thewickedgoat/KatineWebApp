@@ -1,11 +1,11 @@
 <app-toolbar></app-toolbar>
 <div class="menu-container col-md-6 col-md-offset-3" style="margin-top: 115px;">
   <div class="row">
-    <form class="form-group">
+    <form class="form-group" (submit)="tryCreate()">
       <div>
         <dp-day-calendar [config]="config"></dp-day-calendar>
       </div>
-      <div class="input-row row">
+      <div class="input-row row" *ngFor="let dish of dishes; let i = index" [attr.data-index]="i">
         <div class="col-md-7">
           <input placeholder="Rettens navn" type="text" class="inputern form-control">
         </div>
@@ -16,9 +16,10 @@
           <img class="dish-img img-thumbnail"
                src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
         </div>
+        <button (click)="deleteDishLine(i)">X</button>
       </div>
       <div class="col-md-12" style="padding: 10px;">
-        <button (click)="AddDishLine()" class="btn-group btn btn-default">+</button>
+        <button (click)="addDishLine()" class="btn-group btn btn-default">+</button>
         <button class="btn-group btn btn-default" type="submit">Gem Menu</button>
       </div>
     </form>

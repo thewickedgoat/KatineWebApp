@@ -1,14 +1,15 @@
 <app-toolbar></app-toolbar>
 <div class="wrapper">
   <div *ngFor="let menu of menus" class=" col-md-6 col-md-offset-3 menu-history-container">
-    <h1 style="text-align: center">{{menu.date | date}}</h1>
+    {{menu}}
+    <h1 style="text-align: center">{{menu.Date | date}}</h1>
     <hr/>
-    <div *ngFor="let dish of menu.dishes" class="row">
+    <div *ngFor="let dish of menu.Dishes" class="row">
       <div class="col-md-3">
-        <img class="img-thumbnail" src="{{dish.image}}"/>
+        <img class="img-thumbnail" src="{{dish.Image}}"/>
       </div>
       <div class="col-md-9">
-        <h3>{{dish.name}}</h3>
+        <h3>{{dish.Name}}</h3>
       </div>
     </div>
     <button class="menu-btn btn btn-default">Slet</button>

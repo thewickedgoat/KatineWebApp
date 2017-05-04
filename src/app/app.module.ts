@@ -16,17 +16,15 @@ import {TodaysMenuComponent} from './menu/todays-menu/todays-menu.component';
 import {CreateMenuComponent} from './menu/create-menu/create-menu.component';
 import {EditMenuComponent} from './menu/edit-menu/edit-menu.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
-import {HomeComponent} from './home/home.component';
 import {MenuService} from './menu/menu.service';
 import {MenuListComponent} from './menu/menu-list/menu-list.component';
 import {DishViewComponent} from './menu/Shared-components/dish-view/dish-view.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
   {path: 'create-menu', component: CreateMenuComponent},
   {path: 'todays-menu', component: TodaysMenuComponent},
   {path: 'edit-menu', component: EditMenuComponent},
-  {path: 'menu-list', component: MenuListComponent}
+  {path: '', component: MenuListComponent}
 ];
 
 
@@ -37,7 +35,6 @@ const appRoutes: Routes = [
     CreateMenuComponent,
     EditMenuComponent,
     ToolbarComponent,
-    HomeComponent,
     MenuListComponent,
     DishViewComponent
   ],

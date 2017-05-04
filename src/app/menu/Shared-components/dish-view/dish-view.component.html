@@ -1,2 +1,14 @@
-
+<div class="input-row row" *ngFor="let dish of dishes; let i = index" [attr.data-index]="i">
+  <div class="col-md-7">
+    <input placeholder="Rettens navn" type="text" class="inputern form-control">
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn-group btn btn-primary">Vælg billede</button>
+  </div>
+  <div class="col-md-3">
+    <img class="dish-img img-thumbnail"
+         src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
+  </div>
+  <button (click)="deleteDishLine(i)">X</button>
+</div>
 

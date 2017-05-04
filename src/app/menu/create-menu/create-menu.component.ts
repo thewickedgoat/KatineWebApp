@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Menu} from '../menu';
-import {Dish} from '../dish';
+import {MenuService} from "../menu.service";
+import {Dish} from "../dish";
 
 @Component({
   selector: 'app-create-menu',
@@ -10,19 +11,20 @@ import {Dish} from '../dish';
 export class CreateMenuComponent implements OnInit {
 
   menu: Menu;
+  dishes: Dish[] = [];
 
-  dish: Dish;
-
-  constructor() {
-    this.menu = new Menu();
-    this.dish = new Dish();
+  constructor(private menuservice: MenuService) {
   }
 
   ngOnInit() {
+    this.addDishLine();
   }
 
-  AddDishLine() {
-    console.log("function called");
+  addDishLine() {
+    this.dishes.push(new Dish());
   }
 
+  tryCreate(){
+    this.menuservice.createMenu(this.menu);
+  }
 }
