@@ -12,6 +12,7 @@ export class CreateMenuComponent implements OnInit {
 
   menu: Menu;
   dishes: Dish[] = [];
+  theshit: string;
 
   constructor(private menuservice: MenuService) {
   }
@@ -27,4 +28,10 @@ export class CreateMenuComponent implements OnInit {
   tryCreate(){
     this.menuservice.createMenu(this.menu);
   }
+
+  deleteDishLine(index){
+    console.log('ost: ', index);
+    this.dishes.splice(index, 1);
+  }
+
 }
