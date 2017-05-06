@@ -5,17 +5,10 @@
       <div>
         <dp-day-calendar [config]="config"></dp-day-calendar>
       </div>
-      <div class="input-row row" *ngFor="let dish of dishes; let i = index" [attr.data-index]="i">
-        <div class="col-md-7">
-          <input placeholder="Rettens navn" type="text" class="inputern form-control">
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="btn-group btn btn-primary">Vælg billede</button>
-        </div>
-        <div class="col-md-3">
-          <img class="dish-img img-thumbnail"
-               src="http://budapesttimes.hu/wp-content/themes/newsroom14/img/placeholder.png">
-        </div>
+      <div class="input-row row" *ngFor="let dish of menu.Dishes; let i = index" [attr.data-index]="i">
+
+        <app-dish-view
+        [dish]="dish"></app-dish-view>
         <button (click)="deleteDishLine(i)">X</button>
       </div>
       <div class="col-md-12" style="padding: 10px;">

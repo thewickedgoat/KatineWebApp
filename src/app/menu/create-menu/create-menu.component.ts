@@ -11,10 +11,11 @@ import {Dish} from "../dish";
 export class CreateMenuComponent implements OnInit {
 
   menu: Menu;
-  dishes: Dish[] = [];
-  theshit: string;
+
 
   constructor(private menuservice: MenuService) {
+    this.menu = new Menu();
+    this.menu.Dishes = new Array<Dish>();
   }
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class CreateMenuComponent implements OnInit {
   }
 
   addDishLine() {
-    this.dishes.push(new Dish());
+    this.menu.Dishes.push(new Dish());
   }
 
   tryCreate(){
@@ -31,7 +32,7 @@ export class CreateMenuComponent implements OnInit {
 
   deleteDishLine(index){
     console.log('ost: ', index);
-    this.dishes.splice(index, 1);
+    this.menu.Dishes.splice(index, 1);
   }
 
 }

@@ -46,6 +46,7 @@ export class MenuService implements OnInit {
   }
 
   createMenu(menu: Menu){
+    console.log(menu)
     this.http.post(this.APIurl, menu);
   }
 
