@@ -1,15 +1,15 @@
 import {Injectable, OnInit} from '@angular/core';
 import {Menu} from './menu';
-import {Dish} from './dish';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class MenuService implements OnInit {
 
-  APIurl = 'http://cantine-restapi-webapp.azurewebsites.net/api/menu';
+  APIurl = 'http://cantine-restapi-webapp.azurewebsites.net/api/menu/';
+  TmpAPIurl = 'http://localhost:7874/api/menu/';
 
   menu: Menu[];
 
@@ -45,14 +45,24 @@ export class MenuService implements OnInit {
 
   }
 
-  createMenu(menu: Menu){
-    console.log(menu)
-    this.http.post(this.APIurl, menu);
+  createMenu(menu: Menu): any {
+    return this.http.post(this.APIurl, menu)
+      .map(response => response.json() as any);
   }
 
   getMenus(): Observable<Menu[]>{
     return this.http.get(this.APIurl)
-      .map(response => response.json() as Menu[])
+      .map(response => response.json() as Menu[]);
+  }
+
+  deleteMenu(id: number): any {
+    console.log(this.APIurl + id);
+    return this.http.delete(this.APIurl +  id)
+      .map(response => response.json() as any);
+  }
+
+  editMenu(menu: Menu){
+    this.http.put(this.APIurl + menu.Id, menu);
   }
 }
 

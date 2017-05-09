@@ -1,7 +1,7 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Menu} from '../menu';
-import {MenuService} from "../menu.service";
-import {Dish} from "../dish";
+import {MenuService} from '../menu.service';
+import {Dish} from '../dish';
 
 @Component({
   selector: 'app-create-menu',
@@ -11,6 +11,7 @@ import {Dish} from "../dish";
 export class CreateMenuComponent implements OnInit {
 
   menu: Menu;
+  string: object;
 
 
   constructor(private menuservice: MenuService) {
@@ -27,7 +28,9 @@ export class CreateMenuComponent implements OnInit {
   }
 
   tryCreate(){
-    this.menuservice.createMenu(this.menu);
+    console.log('were here');
+    this.menuservice.createMenu(this.menu).subscribe(str => this.string = str);
+
   }
 
   deleteDishLine(index){

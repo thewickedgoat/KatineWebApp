@@ -1,6 +1,6 @@
 <app-toolbar></app-toolbar>
 <div class="wrapper">
-  <div *ngFor="let menu of menus" class=" col-md-6 col-md-offset-3 menu-history-container">
+  <div *ngFor="let menu of menus; let i = index" [attr.data-index]="i" class=" col-md-6 col-md-offset-3 menu-history-container">
     {{menu}}
     <h1 style="text-align: center">{{menu.Date | date}}</h1>
     <hr/>
@@ -12,7 +12,7 @@
         <h3>{{dish.Name}}</h3>
       </div>
     </div>
-    <button class="menu-btn btn btn-default">Slet</button>
+    <button (click)="deleteMenu(menu)" class="menu-btn btn btn-default">Slet</button>
     <button class="menu-btn btn btn-default">Rediger</button>
   </div>
 </div>

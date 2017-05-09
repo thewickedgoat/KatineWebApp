@@ -3,10 +3,9 @@
   <div class="row">
     <form class="form-group" (submit)="tryCreate()">
       <div>
-        <dp-day-calendar [config]="config"></dp-day-calendar>
+        <dp-day-calendar [config]="config" [(ngModel)]="menu.Date" name="date"></dp-day-calendar>
       </div>
-      <div class="input-row row" *ngFor="let dish of menu.Dishes; let i = index" [attr.data-index]="i">
-
+      <div class="input-row row" *ngFor="let dish of menu.Dishes;">
         <app-dish-view
         [dish]="dish"></app-dish-view>
         <button (click)="deleteDishLine(i)">X</button>
