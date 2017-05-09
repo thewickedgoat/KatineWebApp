@@ -3,7 +3,7 @@
   <div class="row">
     <form class="form-group" (submit)="tryCreate()">
       <div>
-        <dp-day-calendar [config]="config" [(ngModel)]="menu.Date" name="date"></dp-day-calendar>
+        <dp-date-picker placeholder="Klik her for at vælge dato..." [config]="datePickerConfig" [(ngModel)]="menu.Date" name="date"></dp-date-picker>
       </div>
       <div class="input-row row" *ngFor="let dish of menu.Dishes;">
         <app-dish-view
