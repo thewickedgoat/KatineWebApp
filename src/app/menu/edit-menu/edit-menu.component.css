@@ -1,0 +1,24 @@
+.menu-container {
+  background-color: rgba(88, 65, 43, 0.57);
+}
+
+.inputern {
+  margin-bottom: 10px;
+  display: inline;
+}
+
+.input-row {
+  padding: 10px;
+  line-height: 97px;
+}
+
+.dish-img {
+  float: right;
+  max-height: 97px;
+}
+
+.btn-group {
+  background-color: #222;
+  border: none;
+  color: #ededed;
+}

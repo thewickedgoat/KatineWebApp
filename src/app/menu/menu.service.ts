@@ -45,9 +45,8 @@ export class MenuService implements OnInit {
 
   }
 
-  createMenu(menu: Menu): any {
-    return this.http.post(this.APIurl, menu)
-      .map(response => response.json() as any);
+  createMenu(menu: Menu) {
+    return this.http.post(this.APIurl, menu);
   }
 
   getMenus(): Observable<Menu[]>{
@@ -55,14 +54,21 @@ export class MenuService implements OnInit {
       .map(response => response.json() as Menu[]);
   }
 
-  deleteMenu(id: number): any {
+  deleteMenu(id: number) {
     console.log(this.APIurl + id);
-    return this.http.delete(this.APIurl +  id)
-      .map(response => response.json() as any);
+    return this.http.delete(this.APIurl +  id);
   }
 
-  editMenu(menu: Menu){
-    this.http.put(this.APIurl + menu.Id, menu);
+  editMenu(menu: Menu): Observable<any>{
+    console.log(menu);
+    return this.http.put(this.APIurl + menu.Id, menu).map(response =>
+      response.json() as any)
+    ;
+  }
+
+  getMenu(id : number) : Observable<Menu> {
+    return this.http.get(this.APIurl + id)
+      .map(menu => menu.json() as Menu);
   }
 }
 

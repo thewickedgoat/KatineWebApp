@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {Routes, RouterModule} from '@angular/router';
+import {Routes, RouterModule, ActivatedRouteSnapshot} from '@angular/router';
 import {AlertModule, CarouselModule} from 'ngx-bootstrap';
 import {DatepickerModule} from 'ngx-bootstrap/datepicker';
 import {DpDatePickerModule} from 'ng2-date-picker';
@@ -23,7 +23,7 @@ import {DishViewComponent} from './menu/Shared-components/dish-view/dish-view.co
 const appRoutes: Routes = [
   {path: 'create-menu', component: CreateMenuComponent},
   {path: 'todays-menu', component: TodaysMenuComponent},
-  {path: 'edit-menu', component: EditMenuComponent},
+  {path: 'edit-menu/:id', component: EditMenuComponent},
   {path: '', component: MenuListComponent}
 ];
 

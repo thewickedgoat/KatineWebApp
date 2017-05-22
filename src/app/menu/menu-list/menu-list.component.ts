@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Menu} from 'app/menu/menu';
 import {MenuService} from '../menu.service';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -11,8 +12,7 @@ import {MenuService} from '../menu.service';
 export class MenuListComponent implements OnInit {
 
   menus: Menu[];
-  string: object;
-  constructor(private menuservice: MenuService) {
+  constructor(private menuservice: MenuService, private router: Router) {
 
   }
 
@@ -21,6 +21,10 @@ export class MenuListComponent implements OnInit {
   }
 
   deleteMenu(menu: Menu) {
-    this.menuservice.deleteMenu(menu.Id).subscribe(str => this.string = str);
+    this.menuservice.deleteMenu(menu.Id);
+  }
+
+  editMenu(menu: Menu){
+    this.router.navigate(['/edit-menu/' + menu.Id]);
   }
 }

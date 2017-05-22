@@ -25,6 +25,7 @@ export class CreateMenuComponent implements OnInit {
 
   addDishLine() {
     this.menu.Dishes.push(new Dish());
+    console.log('hehe');
   }
 
   tryCreate(){
@@ -34,7 +35,6 @@ export class CreateMenuComponent implements OnInit {
   }
 
   deleteDishLine(index){
-    console.log('ost: ', index);
     this.menu.Dishes.splice(index, 1);
   }
 
