@@ -59,10 +59,9 @@ export class MenuService implements OnInit {
     return this.http.delete(this.APIurl +  id);
   }
 
-  editMenu(menu: Menu): Observable<any>{
+  editMenu(menu: Menu){
     console.log(menu);
-    return this.http.put(this.APIurl + menu.Id, menu).map(response =>
-      response.json() as any)
+    return this.http.put(this.APIurl + menu.Id, menu);
     ;
   }
 
