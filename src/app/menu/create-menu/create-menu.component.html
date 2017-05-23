@@ -3,12 +3,14 @@
   <div class="row">
     <form class="form-group" (submit)="tryCreate()">
       <div>
-        <dp-date-picker placeholder="Klik her for at vælge dato..." [config]="datePickerConfig" [(ngModel)]="menu.Date" name="date"></dp-date-picker>
+        <dp-date-picker class="date_picker" placeholder="  Vælg Dato "
+                        style="font-weight: bolder; font-size: medium; padding: 10px;" [config]="datePickerConfig"
+                        [(ngModel)]="menu.Date" name="date"></dp-date-picker>
       </div>
       <div class="input-row row" *ngFor="let dish of menu.Dishes;">
-        <app-dish-view
-        [dish]="dish"></app-dish-view>
-        <button (click)="deleteDishLine(i)">X</button>
+          <app-dish-view
+            [dish]="dish"></app-dish-view>
+          <button (click)="deleteDishLine(i)">X</button>
       </div>
       <div class="col-md-12" style="padding: 10px;">
         <button (click)="addDishLine()" type="button" class="btn-group btn btn-default">+</button>

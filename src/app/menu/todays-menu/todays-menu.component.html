@@ -1,31 +1,20 @@
 <a href="" class=" btn-back btn btn-default"><-</a>
 <div class="col-md-10 col-md-offset-1 todays-menu-container">
-  <h1 style="font-size: 45px; text-align: center">Onsdag d. 3. Maj - 2017</h1>
+  <h1 style="font-size: 45px; text-align: center">{{menu.Date | date}}</h1>
   <hr style="margin-top: 0"/>
   <div class="row" style="padding-top: 15px;">
     <div class="col-md-8" style="height: 100%;">
       <carousel>
-        <slide>
-          <img
-            src="http://res.cloudinary.com/bjoernebanden/image/upload/v1493482083/Flaeskesteg-af-svinekam-med-sproed-svaer-og-traditionelt-tilbehoer-2_b7g3ft.jpg"
-            alt="First slide">
-        </slide>
-        <slide>
-          <img
-            src="http://res.cloudinary.com/bjoernebanden/image/upload/v1493482436/opskrift-in-modemagasinet-in-sommersalat-foraarssalat_v9eqvu.jpg"
-            alt="Second slide">
-        </slide>
-        <slide>
-          <img src="http://res.cloudinary.com/bjoernebanden/image/upload/v1493482165/24556159-tarteletter_iux6to.jpg"
-               alt="Third slide">
+        <slide *ngFor="let dish of menu.Dishes">
+          <img src="{{dish.Image}}"/>
         </slide>
       </carousel>
     </div>
     <div class="col-md-4">
       <ul>
-        <li><h2>Flæskesteg</h2></li>
-        <li><h2>Tarteletter</h2></li>
-        <li><h2>Frisk salat</h2></li>
+        <li *ngFor="let dish of menu.Dishes">
+          <h2>{{dish.Name}}</h2>
+        </li>
       </ul>
     </div>
   </div>

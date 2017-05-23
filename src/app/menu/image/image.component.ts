@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {MenuService} from "../menu.service";
 
 @Component({
   selector: 'app-image',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
-  constructor() { }
+  images : string[];
+
+  constructor(private menuservice: MenuService, private router: Router) { }
 
   ngOnInit() {
+    this.menuservice.getAllImages().subscribe(images => this.images = images);
   }
 
 }
