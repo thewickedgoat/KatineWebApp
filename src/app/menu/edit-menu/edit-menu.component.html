@@ -1,20 +1,19 @@
 <app-toolbar></app-toolbar>
-<div class="menu-container col-md-6 col-md-offset-3" style="margin-top: 115px;">
-  <div class="row">
-    <form *ngIf="menu && menu.Dishes" class="form-group" (submit)="tryEdit()">
-      <div  class="input-row row" *ngFor="let dish of menu.Dishes">
-        <app-dish-view
-          [dish]="dish"></app-dish-view>
-            <button (click)="deleteDishLine(i)">X</button>
-      </div>
+<div class="wrapper">
+  <div class="menu-container col-md-6 col-md-offset-3">
+    <div class="row">
+      <form *ngIf="menu && menu.Dishes" class="form-group" (submit)="tryEdit()">
+        <div class="input-row row" *ngFor="let dish of menu.Dishes; let i = index;">
+          <app-dish-view
+            [dish]="dish"></app-dish-view>
+          <button class="btn-group btn btn-default" (click)="deleteDishLine(i)">X</button>
+        </div>
         <div class="col-md-12" style="padding: 10px;">
           <button (click)="addDishLine()" type="button" class="btn-group btn btn-default">+</button>
-          <button class="btn-group btn btn-default" type="submit">menu menu menueueueu</button>
-      </div>
-      <div>
-        {{menu.Dishes | json}}
-      </div>
-    </form>
+          <button class="btn-group btn btn-default" type="submit">Gem Menu</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 

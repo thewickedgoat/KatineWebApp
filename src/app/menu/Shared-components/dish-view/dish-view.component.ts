@@ -23,6 +23,6 @@ export class DishViewComponent implements OnInit {
   setImage(image: string){
 
     this.dish.Image = image;
-
   }
+
 }

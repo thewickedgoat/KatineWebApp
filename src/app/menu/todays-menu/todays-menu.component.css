@@ -13,8 +13,9 @@
   right: 15px;
 }
 
-.todays-menu-container[_ngcontent-c1] {
-  background-color: rgba(88, 65, 43, 0.57);
+.todays-menu-container {
+  background-color: rgba(88, 65, 43, 0.6);
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.55);
 }
 
 .todays-menu-container img {
@@ -34,7 +35,7 @@
 }
 
 .btn-back {
-  border-radius: 30px;
+  border-radius: 30px!important;
   float: left;
   margin: 8px;
   background-color: #222;

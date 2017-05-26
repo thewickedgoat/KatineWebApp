@@ -30,7 +30,7 @@ export class MenuService implements OnInit {
       .map(response => response.json() as Menu[]);
   }
 
-  deleteMenu(id: number) : any {
+  deleteMenu(id: number): any {
     console.log('lål');
     return this.http.delete(this.APIurl + id).map(res => res.json() as object);
 
@@ -50,6 +50,11 @@ export class MenuService implements OnInit {
   getAllImages(): Observable<string[]> {
     return this.http.get(this.APIurl + "/getAllImages")
       .map(images => images.json() as string[]);
+  }
+
+  getTodaysMenu(): Observable<Menu> {
+    return this.http.get(this.APIurl + "/getTodaysMenu")
+      .map(menu => menu.json() as Menu);
   }
 }
 

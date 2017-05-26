@@ -38,6 +38,7 @@ export class EditMenuComponent implements OnInit {
   }
 
   deleteDishLine(index){
+    console.log(index);
     this.menu.Dishes.splice(index, 1);
   }
   addDishLine() {

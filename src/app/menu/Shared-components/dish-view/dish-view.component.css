@@ -1,31 +1,12 @@
-.menu-container {
-  background-color: rgba(88, 65, 43, 0.57);
-}
-
-.inputern {
+.dish-name-input {
   margin-bottom: 10px;
   display: inline;
-}
-
-.input-row {
-  padding: 10px;
-  line-height: 97px;
-}
-
-.dish-img {
-  float: right;
-  max-height: 97px;
 }
 
 .btn-group {
   background-color: #222;
   border: none;
   color: #ededed;
-}
-
-.wrapper {
-  position: relative;
-  top: 100px;
 }
 
 .img-container {
@@ -36,19 +17,12 @@
   margin-bottom: 15px;
 }
 
-.img-container img {
-  position: absolute;
-  left: -100%;
-  right: -100%;
-  top: -100%;
-  bottom: -100%;
-  margin:auto;
-  width: auto;
-  height:auto;
+.dish-img {
+  float: right;
+  max-height: 97px;
+  padding: 2px;
 }
-.image-list-container {
-  background-color: rgba(88, 65, 43, 0.57);
-  margin-top: 15px;
-  overflow-x: hidden;
-  position: relative;
+
+.modal-content {
+  background-color: rgba(88, 65, 43, 0.7);
 }

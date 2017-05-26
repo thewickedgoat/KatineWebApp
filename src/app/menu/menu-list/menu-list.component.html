@@ -1,7 +1,7 @@
 <app-toolbar></app-toolbar>
 <div class="wrapper">
-  <div *ngFor="let menu of menus; let i = index" [attr.data-index]="i" class=" col-md-6 col-md-offset-3 menu-history-container">
-    {{menu}}
+  <div *ngFor="let menu of menus; let i = index" [attr.data-index]="i"
+       class=" col-md-6 col-md-offset-3 menu-container">
     <h1 style="text-align: center">{{menu.Date | date}}</h1>
     <hr/>
     <div *ngFor="let dish of menu.Dishes" class="row">
@@ -12,7 +12,7 @@
         <h3>{{dish.Name}}</h3>
       </div>
     </div>
-    <button (click)="deleteMenu(menu)" class="menu-btn btn btn-default">Slet</button>
-    <button (click)="editMenu(menu)" class="menu-btn btn btn-default">Rediger</button>
+    <button (click)="deleteMenu(menu)" class="menu-btn btn-group btn btn-default">Slet</button>
+    <button (click)="editMenu(menu)" class="menu-btn btn-group btn btn-default">Rediger</button>
   </div>
 </div>

@@ -1,6 +1,6 @@
-<a href="" class=" btn-back btn btn-default"><-</a>
-<div class="col-md-10 col-md-offset-1 todays-menu-container">
-  <h1 style="font-size: 45px; text-align: center">{{menu.Date | date}}</h1>
+<a href="" class=" btn-back btn btn-default" style="position: absolute; font-weight: bold"><-</a>
+<div *ngIf="menu && menu.Dishes" class="col-md-10 col-md-offset-1 todays-menu-container">
+  <h1 style="font-size: 45px; text-align: center">{{menu.Date | date : "dd/MM - yyyy"}}</h1>
   <hr style="margin-top: 0"/>
   <div class="row" style="padding-top: 15px;">
     <div class="col-md-8" style="height: 100%;">

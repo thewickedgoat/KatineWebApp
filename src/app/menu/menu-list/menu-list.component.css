@@ -1,11 +1,5 @@
-.menu-history-container {
-  background-color: rgba(88, 65, 43, 0.57);
-  margin-top: 15px;
-}
-
-.wrapper {
-  position: relative;
-  top: 100px;
+.menu-container {
+  margin-bottom: 50px;
 }
 
 .todays-menu-container, h1, h2, h3, h4, h5, h6 {
@@ -13,7 +7,7 @@
   text-shadow: 4px 4px 4px #000000;
 }
 
-.menu-btn {
+.menu-btn, .menu-btn:active {
   background-color: #222;
   border: none;
   color: #ededed;
@@ -23,4 +17,10 @@
 
 .menu-btn, button:first-child {
   margin-right: 10px;
+}
+
+.img-thumbnail {
+  margin-bottom: 6px;
+  border: none;
+  padding: 2px;
 }

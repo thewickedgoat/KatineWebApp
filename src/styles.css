@@ -1,3 +1,12 @@
+body {
+  font-family: PT Sans Narrow, sans-serif !important;
+  margin-bottom: 50px;
+}
+
+* {
+  border-radius: 0px !important;
+}
+
 .backgroundImage {
   background-image: url("http://www.publicdomainpictures.net/pictures/210000/velka/wooden-background-1490898523Icg.jpg");
   height: 100%;
@@ -15,8 +24,27 @@
 .carousel-control {
   display: none;
 }
-body {
-   font-family: PT Sans Narrow, sans-serif!important;
- }
+
+.wrapper {
+  top: 125px;
+  position: relative;
+}
+
+.menu-container {
+  background-color: rgba(88, 65, 43, 0.7);
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.55);
+}
+
+.input-row {
+  padding: 10px;
+  line-height: 70px;
+}
+
+button.btn-group, button.btn-group:hover, button.btn-group:active, button.btn-group:visited, button.btn-group:focus {
+  background-color: #222!important;
+  border: none;
+  color: #ededed;
+}
+
 
 

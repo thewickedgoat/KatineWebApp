@@ -26,20 +26,20 @@ export class CreateMenuComponent implements OnInit {
 
   addDishLine() {
     this.menu.Dishes.push(new Dish());
-    console.log('hehe');
   }
 
-  tryCreate(){
-    console.log('were here');
+  tryCreate() {
+    var d = new Date(this.menu.Date);
+    d.setMinutes(d.getMinutes() + 240);
+    this.menu.Date = d;
     this.menuservice.createMenu(this.menu).subscribe(str => {
       this.string = str;
       this.router.navigate(['/']);
     });
-
   }
 
-  deleteDishLine(index){
+  deleteDishLine(index) {
+    console.log(index);
     this.menu.Dishes.splice(index, 1);
   }
-
 }

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Menu} from "../menu";
 import {MenuService} from "../menu.service";
-import {Router, ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-todays-menu',
@@ -10,16 +9,14 @@ import {Router, ActivatedRoute, Params} from "@angular/router";
 
 })
 export class TodaysMenuComponent implements OnInit {
-menu : Menu;
+  menu: Menu;
 
-  constructor(private route: ActivatedRoute, private menuservice: MenuService, private router: Router) { }
+  constructor(private menuservice: MenuService) {
+  }
 
   ngOnInit() {
-    this.route.params
-      .switchMap((params: Params) => this.menuservice.getMenu(+params['id']))
-      .subscribe(menu => {
-        this.menu = menu;
-      });
+    this.menuservice.getTodaysMenu().subscribe(menu =>
+      this.menu = menu);
   }
 
 }
