@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {MenuService} from '../menu.service';
 import 'rxjs/add/operator/switchMap';
@@ -24,23 +24,19 @@ export class EditMenuComponent implements OnInit {
       .switchMap((params: Params) => this.menuservice.getMenu(+params['id']))
       .subscribe(menu => {
         this.menu = menu;
-        console.log(menu);
       });
   }
 
-  tryEdit(){
-    console.log(this.menu);
+  tryEdit() {
     this.menuservice.editMenu(this.menu).subscribe(() => {
       this.router.navigate(['/']);
-    }, error2 => {
-      console.log(error2);
     });
   }
 
-  deleteDishLine(index){
-    console.log(index);
+  deleteDishLine(index) {
     this.menu.Dishes.splice(index, 1);
   }
+
   addDishLine() {
     this.menu.Dishes.push(new Dish());
   }

@@ -20,13 +20,11 @@ import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MenuService} from './menu/menu.service';
 import {MenuListComponent} from './menu/menu-list/menu-list.component';
 import {DishViewComponent} from './menu/Shared-components/dish-view/dish-view.component';
-import { ImageComponent } from './menu/image/image.component';
 
 const appRoutes: Routes = [
   {path: 'create-menu', component: CreateMenuComponent},
   {path: 'todays-menu', component: TodaysMenuComponent},
   {path: 'edit-menu/:id', component: EditMenuComponent},
-  {path: 'image', component: ImageComponent},
   {path: '', component: MenuListComponent}
 ];
 
@@ -40,7 +38,6 @@ const appRoutes: Routes = [
     ToolbarComponent,
     MenuListComponent,
     DishViewComponent,
-    ImageComponent
   ],
   imports: [
     BrowserModule,
