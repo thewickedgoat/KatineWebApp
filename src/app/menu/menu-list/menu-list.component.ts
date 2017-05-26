@@ -21,7 +21,11 @@ export class MenuListComponent implements OnInit {
   }
 
   deleteMenu(menu: Menu) {
-    this.menuservice.deleteMenu(menu.Id);
+    this.menuservice.deleteMenu(menu.Id).subscribe(res => {
+      console.log(res);
+      this.ngOnInit();
+      }, error2 => {console.log(error2);
+    });
   }
 
   editMenu(menu: Menu){

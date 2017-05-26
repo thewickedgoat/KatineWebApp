@@ -2,6 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Menu} from '../menu';
 import {MenuService} from '../menu.service';
 import {Dish} from '../dish';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-menu',
@@ -14,7 +15,7 @@ export class CreateMenuComponent implements OnInit {
   string: object;
 
 
-  constructor(private menuservice: MenuService) {
+  constructor(private menuservice: MenuService, private router: Router) {
     this.menu = new Menu();
     this.menu.Dishes = new Array<Dish>();
   }
@@ -30,7 +31,10 @@ export class CreateMenuComponent implements OnInit {
 
   tryCreate(){
     console.log('were here');
-    this.menuservice.createMenu(this.menu).subscribe(str => this.string = str);
+    this.menuservice.createMenu(this.menu).subscribe(str => {
+      this.string = str;
+      this.router.navigate(['/']);
+    });
 
   }
 

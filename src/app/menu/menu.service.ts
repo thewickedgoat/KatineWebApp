@@ -30,9 +30,10 @@ export class MenuService implements OnInit {
       .map(response => response.json() as Menu[]);
   }
 
-  deleteMenu(id: number) {
-    console.log(this.APIurl + id);
-    return this.http.delete(this.APIurl + id);
+  deleteMenu(id: number) : any {
+    console.log('lål');
+    return this.http.delete(this.APIurl + id).map(res => res.json() as object);
+
   }
 
   editMenu(menu: Menu) {

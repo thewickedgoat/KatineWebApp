@@ -8,6 +8,7 @@ import {Routes, RouterModule, ActivatedRouteSnapshot} from '@angular/router';
 import {AlertModule, CarouselModule} from 'ngx-bootstrap';
 import {DatepickerModule} from 'ngx-bootstrap/datepicker';
 import {DpDatePickerModule} from 'ng2-date-picker';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import 'hammerjs';
 
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     AlertModule.forRoot(),
+    ModalModule.forRoot(),
     CarouselModule.forRoot(),
     DatepickerModule.forRoot(),
     DpDatePickerModule
